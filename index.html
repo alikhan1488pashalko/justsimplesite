@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ОНО ТЕБЕ НАДО?</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Общие стили */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+            overflow-x: hidden; /* Запрещаем горизонтальный скроллинг */
+        }
+        /* Шапка */
+        header {
+            background-color: #28a745; /* Зеленый цвет */
+            color: #000; /* Черный цвет текста */
+            padding: 20px 0;
+            text-align: center;
+            height: 100vh; /* Занимаем всю высоту экрана */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 2s; /* Анимация при первой загрузке */
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3em; /* Увеличиваем размер шрифта */
+            font-family: 'Montserrat', sans-serif; /* Используем шрифт Montserrat */
+            display: inline-block;
+            white-space: nowrap; /* Запрещаем перенос строк */
+            overflow: hidden; /* Скрываем текст, который не помещается */
+            animation: scaleDown 0.5s forwards;
+        }
+        /* Навигационное меню */
+        nav {
+            background-color: #28a745; /* Зеленый цвет */
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 20px;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        nav a:hover {
+            background-color: #218838; /* Зеленый цвет - темнее */
+        }
+        /* Секция */
+        section {
+            padding: 50px 20px;
+            text-align: center;
+            height: 100vh; /* Занимаем всю высоту экрана */
+        }
+        section h2 {
+            margin-top: 0;
+        }
+        /* Подвал */
+        footer {
+            background-color: #28a745; /* Зеленый цвет */
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        /* Анимация */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>
+            <span\>Добро пожаловать на мой сайт!
+        </h1>
+    </header>
+
+    <nav>
+        <a href="#" id="homeButton">Главная</a>
+        <button id="aboutButton">О нас</button>
+        <a href="#" id="contacs">Контакты</a>
+    </nav>
+
+    <section id="homeButton">
+        <h2>Это сайт простой от Алихана</h2>
+        <p>Простой сайт🙂</p>
+    </section>
+
+    <section id="aboutSection" style="display: none;">
+        <h2>О сайте</h2>
+        <p>Тут можно узнать что-то о сайте</p>
+        <h2>Зачем я создал этот сайт?</h2>
+        <p>Я просто решил создать этот сайт! (на HTML)</p>
+    </section>
+
+    <footer>
+        <p>Мой простой сайт😉</p>
+    </footer>
+
+    <script>
+        // Находим кнопку и раздел "О нас" по их идентификаторам
+        const aboutButton = document.getElementById('aboutButton');
+        const aboutSection = document.getElementById('aboutSection');
+
+        // Назначаем обработчик события для клика по кнопке
+        aboutButton.addEventListener('click', function() {
+            // Переключаем видимость раздела "О нас"
+            if (aboutSection.style.display === 'none' || aboutSection.style.display === '') {
+                aboutSection.style.display = 'block';
+            } else {
+                aboutSection.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
